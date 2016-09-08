@@ -1,0 +1,23 @@
+##cmq sdk for c++ on linux 使用说明
+
+## 安装方法
+### 环境依赖
+cmq c++ sdk使用curl进行网络操作，无论是作为客户端还是服务器端，都需要依赖curl。
+
+
+#### 第三方库下载以及安装
+
+##### libcurl
+
+  请从[这里](http://curl.haxx.se/download.html)下载，并参考[libcurl 安装指南](http://curl.haxx.se/docs/install.html)安装。典型的安装方式如下：
+    ./configure
+    make
+    make install
+	如果请求采用https方式，安装时需打开ssl支持，具体参看curl说明
+
+#### 目录说明
+
+  src 目录为cmq sdk 源码目录，执行 make，将编译出libcmq.a,libcmq.so两种库
+  sample 目录为sdk示例代码，执行 make可编译，
+		执行示例程序前，如果是链接的libcmq.so,需把其所在目录加入到环境变量LD_LIBRARY_PATH中，方法：
+		export LD_LIBRARY_PATH=/libcmq.so所在目录:$LD_LIBRARY_PATH
